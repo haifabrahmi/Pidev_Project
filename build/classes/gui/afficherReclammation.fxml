@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="welcomeLb" prefHeight="584.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficherReclammationController">
+   <children>
+      <TableView fx:id="reclamTv" layoutX="150.0" layoutY="107.0" prefHeight="349.0" prefWidth="791.0">
+        <columns>
+            <TableColumn fx:id="nomTv" prefWidth="214.0" text="Nom Voyageur" />
+            <TableColumn fx:id="descrTv" prefWidth="204.0" text="Description" />
+          <TableColumn fx:id="dateTv" prefWidth="195.0" text="Date depot" />
+            <TableColumn fx:id="delete" prefWidth="177.0" text="Action" />
+        </columns>
+      </TableView>
+      <Label layoutX="698.0" layoutY="45.0" prefHeight="28.0" prefWidth="243.0" text="gestion des reclamations" textFill="#ffca36">
+         <font>
+            <Font name="System Bold Italic" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterReponseController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="152.0" style="-fx-background-color: #ffca36;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#afficheReponse" prefHeight="31.0" prefWidth="159.0" style="-fx-background-color: #52a0ec;" text="Afficher" />
+         </children></VBox>
+      <Label layoutX="163.0" layoutY="97.0" prefHeight="30.0" prefWidth="222.0" text="Resolution Reclamation" textFill="#52a0ec">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="163.0" layoutY="191.0" prefHeight="21.0" prefWidth="158.0" text="Date Reponse" textFill="#52a0ec">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfresol" layoutX="386.0" layoutY="97.0" />
+      <DatePicker fx:id="tfdate" layoutX="386.0" layoutY="191.0" prefHeight="31.0" prefWidth="187.0" />
+      <Button fx:id="btnAjout" layoutX="274.0" layoutY="298.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: #52a0ec;" text="Ajouter" />
+   </children>
+</AnchorPane>
