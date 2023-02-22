@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="id_m" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MaintenanceController">
+   <children>
+      <ImageView fitHeight="262.0" fitWidth="341.0" layoutX="187.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/png-clipart-computer-icons-symbol-icon-design-button-symbol-miscellaneous-angle-thumbnail-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="id_user" layoutX="71.0" layoutY="329.0" text="id_user" />
+      <Label fx:id="Description" layoutX="248.0" layoutY="329.0" prefHeight="18.0" prefWidth="82.0" text="Description" />
+      <Label fx:id="date_entretien" layoutX="403.0" layoutY="329.0" text="date_entretien" />
+      <Label fx:id="id_m" layoutX="528.0" layoutY="329.0" text="id_m" />
+   </children>
+</AnchorPane>

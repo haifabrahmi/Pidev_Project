@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="592.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AffichermaintenanceController">
+   <children>
+      <TableView fx:id="tab" layoutX="76.0" layoutY="103.0" prefHeight="398.0" prefWidth="675.0">
+        <columns>
+          <TableColumn fx:id="dateentretien" prefWidth="200.80001068115234" text="Date entretien" />
+          <TableColumn fx:id="description" minWidth="0.0" prefWidth="194.39996337890625" text="Description" />
+            <TableColumn fx:id="id_m" minWidth="0.0" prefWidth="278.39998168945317" text="id_m" />
+        </columns>
+      </TableView>
+      <Label layoutX="221.0" layoutY="24.0" prefHeight="58.0" prefWidth="324.0" text="Liste maintenance" textFill="#ffca36">
+         <font>
+            <Font name="Felix Titling" size="32.0" />
+         </font>
+      </Label>
+      <Button layoutX="545.0" layoutY="528.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" style="-fx-background-color: #5b5a56;" text="Modifier" textFill="WHITE" />
+      <Button layoutX="636.0" layoutY="528.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #5b5a56;" text="Button" textFill="WHITE" />
+   </children>
+</AnchorPane>
