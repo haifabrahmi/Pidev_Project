@@ -6,12 +6,17 @@
 package gui;
 
 import entities.Reservation;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -28,6 +33,8 @@ public class TicketController implements Initializable {
     private Label dater;
     @FXML
     private Label nbp;
+    @FXML
+    private ImageView retour;
 
     /**
      * Initializes the controller class.
@@ -45,5 +52,16 @@ public class TicketController implements Initializable {
 
 
     }
+    @FXML
+    private void retour(MouseEvent event) throws IOException {
+        Reservation r = new Reservation();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Reservation.fxml"));
+            Parent root = loader.load();
+            ReservationController controller = loader.getController();
+            controller.setdataReservation(r);
+
+            retour.getScene().setRoot(root);
+    }
+    }
     
-}
+

@@ -43,7 +43,7 @@ public class BackendController implements Initializable {
           FXMLLoader loader = new FXMLLoader(getClass().getResource("Afficher_res.fxml"));
             Parent root = loader.load();
             Afficher_resController controller = loader.getController();
-            controller.setdatafficher_res(r);
+            controller.setdataReservation(r);
 
             backend.getScene().setRoot(root);
     }
@@ -51,7 +51,7 @@ public class BackendController implements Initializable {
             
             @FXML
     private void frontend(ActionEvent event) throws IOException {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Reservation.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("reservation.fxml"));
             Parent root = loader.load();
             ReservationController controller = loader.getController();
             controller.setdataReservation(r);

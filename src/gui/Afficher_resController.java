@@ -22,7 +22,6 @@ import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TextField;
 
 /**
@@ -53,14 +52,26 @@ public class Afficher_resController implements Initializable {
           Reservation r = new Reservation();
     @FXML
     private Button supprimer;
+
     @FXML
     private Button modifier;
+    @FXML
+    private TextField res_input;
+   
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         
+    // Add listener to tableview selection
+    tv.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+        if (newSelection != null) {
+            // Display the ID of the selected row in the textfield
+            res_input.setText(Integer.toString(newSelection.getId_res()));
+        }
+    });
          try {
 
           List list = rs.recuperer();
@@ -77,11 +88,44 @@ public class Afficher_resController implements Initializable {
                 tv.setItems(ListRes); 
                 
 } catch (SQLException ex) {
-             System.out.println("asslema "+ex);        }
+             System.out.println("error baba "+ex);        }
     }
-    public void setdatafficher_res(Reservation r) {
+
+   @FXML
+private void supprimer(ActionEvent event) throws SQLException {
+     String idText = res_input.getText();
+    if (idText.matches("\\d+")) {
+        int id = Integer.parseInt(idText);
+        Reservation r = new Reservation();
+        r.setId_res(id);
+        rs.supprimer(r);
+        
+        
+        // Remove the deleted reservation from the tableview
+        tv.getItems().removeIf(reservation -> reservation.getId_res() == id);
+         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Reservation Supprimé");
+        alert.setHeaderText(null);
+        alert.setContentText("Reservation Supprimé");
+        alert.showAndWait();
+    } else {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Erreur de saisie");
+        alert.setHeaderText(null);
+        alert.setContentText("Le champ doit contenir un nombre valide !");
+        alert.showAndWait();
     }
-    private void supprimer(ActionEvent event) throws SQLException {
-   r.setId_res(java.sql.Date.valueOf(id_res.getValue()));
+    
+   
+}
+
+
+    @FXML
+    private void modifier(ActionEvent event) {
+        
     }
+
+     void setdatares(Reservation r) {
+     }
+    
     }

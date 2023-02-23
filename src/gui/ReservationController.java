@@ -69,7 +69,7 @@ private void ajouterReservation(ActionEvent event) throws SQLException {
     try {
         Integer.parseInt(nb_place.getText());
     } catch (NumberFormatException e) {
-        // Afficher un message d'erreur si le champ 'nb_place' ne contient pas un nombre valide
+        // message d'erreur si le champ 'nb_place' ne contient pas un nombre valide
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Erreur de saisie");
         alert.setHeaderText(null);

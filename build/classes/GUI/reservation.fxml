@@ -14,7 +14,7 @@
 <AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReservationController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="405.0" layoutX="466.0" layoutY="55.0" stroke="#ffca3800" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeMiterLimit="40.0" strokeType="OUTSIDE" strokeWidth="0.0" width="389.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffca36" height="518.0" strokeLineCap="ROUND" strokeType="OUTSIDE" width="399.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb923" height="518.0" strokeLineCap="ROUND" strokeType="OUTSIDE" width="399.0">
          <stroke>
             <LinearGradient endX="1.0" endY="1.0" startY="0.1969697258689187">
                <stops>
@@ -55,7 +55,7 @@
       <DatePicker fx:id="dateres" layoutX="638.0" layoutY="149.0" prefHeight="26.0" prefWidth="151.0" promptText="date" />
       <Button fx:id="goback" layoutX="515.0" layoutY="361.0" mnemonicParsing="false" onAction="#retour" prefHeight="30.0" prefWidth="290.0" text="Afficher Ticket" />
       <TextField fx:id="heureres" layoutX="638.0" layoutY="199.0" promptText="12:30" />
-      <Label layoutX="532.0" layoutY="82.0" text="Réserver Votre Ticket" textFill="#ffca36">
+      <Label layoutX="532.0" layoutY="82.0" text="Réserver Votre Ticket" textFill="#ffb923">
          <font>
             <Font name="Consolas Bold" size="24.0" />
          </font>
