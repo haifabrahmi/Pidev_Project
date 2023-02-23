@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" prefHeight="473.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Afficher_TicketController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffca36" height="481.0" stroke="TRANSPARENT" strokeType="INSIDE" width="726.0" />
+      <TableView fx:id="tv" layoutX="79.0" layoutY="105.0" prefHeight="263.0" prefWidth="568.0">
+        <columns>
+          <TableColumn fx:id="idticket" prefWidth="121.60000610351562" text="id_ticket" />
+          <TableColumn fx:id="prixticket" prefWidth="96.00001525878906" text="prix" />
+            <TableColumn fx:id="dateachat" prefWidth="116.79998779296875" text="date_achat" />
+            <TableColumn fx:id="typeticket" prefWidth="116.800048828125" text="typeticket" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
