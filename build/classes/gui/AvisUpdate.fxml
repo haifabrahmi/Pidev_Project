@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="468.0" prefWidth="706.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AvisUpdateController">
+   <children>
+      <VBox layoutX="21.0" layoutY="20.0" prefHeight="428.0" prefWidth="215.0" style="-fx-background-color: #ffca36;" />
+      <Label layoutX="284.0" layoutY="34.0" text="Modifier Avis" textFill="#ffca36" textOverrun="CENTER_WORD_ELLIPSIS">
+         <font>
+            <Font name="Felix Titling" size="43.0" />
+         </font>
+      </Label>
+      <TextField id="NomUsertf" fx:id="nomUsertf" layoutX="329.0" layoutY="107.0" prefHeight="26.0" prefWidth="225.0" promptText="Nom" />
+      <TextField id="commenttf" fx:id="commenttf" layoutX="329.0" layoutY="192.0" prefHeight="178.0" prefWidth="226.0" promptText="Commentaire" />
+      <TextField id="notetf" fx:id="notetf" layoutX="329.0" layoutY="149.0" prefHeight="26.0" prefWidth="225.0" promptText="Note" />
+      <Button id="loginbutton" fx:id="modifier" layoutX="562.0" layoutY="393.0" mnemonicParsing="false" onAction="#confirmer" style="-fx-background-color: #2159e7;" text="Modifier" textFill="WHITE" />
+      <ImageView fx:id="imageAvis" fitHeight="126.0" fitWidth="215.0" layoutX="21.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../PIDEV/Pidev/pidev/src/gui/image/codeur-avis-clients-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="161.0" fitWidth="162.0" layoutX="41.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/331948950_752994396412319_7139138320057929600_n-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
