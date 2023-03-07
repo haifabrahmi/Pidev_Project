@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficheReclamController">
+   <children>
+      <Label layoutX="103.0" layoutY="22.0" prefHeight="28.0" prefWidth="309.0" text="Gestion des reclamations" textFill="#ffca36">
+         <font>
+            <Font name="Felix Titling" size="19.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="14.0" layoutY="86.0" prefHeight="255.0" prefWidth="500.0">
+         <columns>
+            <TableColumn fx:id="nomTv" prefWidth="160.0" text="Nom Voyageur" />
+            <TableColumn fx:id="descrTv" prefWidth="171.0" text="Description" />
+            <TableColumn fx:id="dateTv" prefWidth="168.0" text="Date depot" />
+         </columns>
+      </TableView>
+      <Button layoutX="175.0" layoutY="359.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #4682B4;" text="Supprimer" textFill="#f5f5f5">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font></Button>
+      <Button layoutX="332.0" layoutY="359.0" mnemonicParsing="false" onAction="#modifier" prefHeight="31.0" prefWidth="103.0" style="-fx-background-color: #4682B4;" text="Modifier" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font></Button>
+      <Button fx:id="retour_aff" layoutX="21.0" layoutY="356.0" mnemonicParsing="false" onAction="#retouraff" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #4682B4;" text="Retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font></Button>
+      <Button fx:id="genererPDF" layoutX="462.0" layoutY="359.0" mnemonicParsing="false" onAction="#genererPDF" style="-fx-background-color: #4682B4;" text="Generer PDF" textFill="#fcfcfc">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button layoutX="521.0" layoutY="228.0" mnemonicParsing="false" onAction="#gererExcel" style="-fx-background-color: #4682B4;" text="gerer excel" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="519.0" layoutY="293.0" mnemonicParsing="false" onAction="#genererCSV" prefHeight="37.0" prefWidth="103.0" text="csv">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
