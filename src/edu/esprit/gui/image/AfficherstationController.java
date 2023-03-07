@@ -130,6 +130,16 @@ public class AfficherstationController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("modifiersation.fxml"));
         Parent root = loader.load();
         ModifiersationController controller = loader.getController();
+        
+        
+         controller. setListener(new ModifiersationController.PopupListener() {
+                        @Override
+                        public void onInfoSent( Boolean Rendez_vousInstance) {
+                           tv.getItems().clear();
+                           
+                           remplir();
+                }
+                    });
         controller.setAtrtribute(station);
         controller.setListener(new PopupListener() {
             @Override

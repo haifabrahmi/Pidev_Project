@@ -102,6 +102,11 @@ public class ModifiersationController implements Initializable {
         s.setHoraire_s(date);
         Service st = new Service();
         st.modifier(s);
+        if (listener != null) {
+            listener.onInfoSent(true);
+        }
+         Stage stage = (Stage) annuler.getScene().getWindow();
+        stage.close();
     }
     
 

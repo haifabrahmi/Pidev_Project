@@ -95,8 +95,13 @@ public class ModifiercircuitController implements Initializable {
         
         java.sql.Date date = java.sql.Date.valueOf(horaire_c1.getValue());
         c.setHoraire_c(date);
-ServiceCircuit sc = new ServiceCircuit();     
-sc.modifier(c);
+         ServiceCircuit sc = new ServiceCircuit();     
+         sc.modifier(c);
+          if (Listener != null) {
+            Listener.onInfoSent(true);
+    }
+  Stage stage = (Stage) annuler1.getScene().getWindow();
+        stage.close();
     }
     
 }

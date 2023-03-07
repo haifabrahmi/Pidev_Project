@@ -35,6 +35,7 @@ public class main {
             st.ajouter(s1); 
 
       //st.supprimer(10);
+      st.supprimer(8011);
       //st.supprimer(11);
        
        
@@ -43,8 +44,16 @@ public class main {
 //       Station s4 = new Station(56, "oumaima", "benhamouda", "hahahahah", Date.valueOf("2017-08-09"), "yyyy", "ooooo");
 //       Station s5 = new Station(5886, "ahlem", "boshra", "ameni", Date.valueOf("2017-08-09"), "yyyy", "ooooo");
 //       Station s7 = new Station( "Gare du Nord","10 Rue de Dunkerque", "",  Date.valueOf("2010-08-10"), "Escaliers","comment trial");
-        //st.ajouter(s7);
-//       System.out.println(st.getAll());
+           Station s14 = new Station( "Gare du Nord","10 Rue de Dunkerque", "",  Date.valueOf("2010-08-10"), "Escaliers","comment trial");
+        st.ajouter(s14);
+        if (s14.isValid()) {
+        System.out.println("Les valeurs saisies sont valides.");
+    } else
+        {        System.out.println("Les valeurs saisies sont invalides.");
+    }
+ // controle de saisie 
+          
+      System.out.println(st.getAll());
 //       
 //       Station s6 = new Station( "Gare du Nord","10 Rue de Dunkerque", "",  Date.valueOf("2010-08-10"), "Escaliers","comment trial");
 //    if (s6.isValid()) {
@@ -64,53 +73,39 @@ public class main {
        //sc.ajouter(c3);
         sc.ajouter(c2);
         sc.supprimer(3);
-//      sc.supprimer(26);
-//      sc.supprimer(59);
-//      sc.supprimer(60);
-//      sc.supprimer(51);
-//      sc.supprimer(52);
-//      sc.supprimer(53);
-//      sc.supprimer(64);
-//      sc.supprimer(65);
-//      sc.supprimer(66);
-//      sc.supprimer(67);
-//      sc.supprimer(68);
-//      sc.supprimer(69);
-//      sc.supprimer(38);
-//      sc.supprimer(39);
-//      sc.supprimer(40);
-//      sc.supprimer(41);
-//      sc.supprimer(42);
-//      sc.supprimer(43);
-//      sc.supprimer(44);
-//      sc.supprimer(45);
-//      sc.supprimer(46);
-//      
-//           
+    
             
                     
 
 //     
 //      sc.supprimer(10);
         Circuit c3 = new Circuit(10,"pppppppppp",5,10,Date.valueOf("2001-07-12"),"nawara");
+        sc.ajouter(c3);
+//        if (c3.isValid()) {
+//        System.out.println("Les valeurs saisies sont valides.");
+//    } else
+//        {        System.out.println("Les valeurs saisies sont invalides.");
+//    }
       sc.modifier(c3);
      Circuit c4 = new Circuit (30,"sabrine",6,11,Date.valueOf("2020-11-29"),"sabrinoush");
+     Circuit c7 = new Circuit (30,"achref",6,11,Date.valueOf("2020-11-29"),"achref");
        Circuit c5 = new Circuit (20,"haifa",8,12,Date.valueOf("2022-11-19"),"haifouf");
-     System.out.println(sc.getAll());
-     Service s = new Service();
-List <Station> e1=s.getAll();
-          for (Station s13:e1){
-        System.out.println("name :"+s13.getNom_s());
-        System.out.println("description : "+s13.getLigne_s());
-        System.out.println("Adresse : "+s13.getAdresse_s());
-        System.out.println("Ligne : "+s13.getLigne_s());
-        System.out.println("horaire : "+s13.getHoraire_s());
-        System.out.println("equipement : "+s13.getHoraire_s());
-       System.out.println("Commentaire: "+s13.getCommentaire_s());
-        //System.out.println("nom circuit"+s8.getCircuit().getNom_c());
-        System.out.println();
-  }        
-  
+       sc.modifier(c7);
+      System.out.println(sc.getAll());
+//     Service s = new Service();
+//List <Station> e1=s.getAll();
+//          for (Station s13:e1){
+//        System.out.println("name :"+s13.getNom_s());
+//        System.out.println("description : "+s13.getLigne_s());
+//        System.out.println("Adresse : "+s13.getAdresse_s());
+//        System.out.println("Ligne : "+s13.getLigne_s());
+//        System.out.println("horaire : "+s13.getHoraire_s());
+//        System.out.println("equipement : "+s13.getHoraire_s());
+//       System.out.println("Commentaire: "+s13.getCommentaire_s());
+//        //System.out.println("nom circuit"+s8.getCircuit().getNom_c());
+//        System.out.println();
+//  }        
+//  
         
    }
 

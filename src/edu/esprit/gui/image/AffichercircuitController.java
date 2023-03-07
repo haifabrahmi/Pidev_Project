@@ -108,8 +108,19 @@ Circuit c = new Circuit();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("modifiercircuit.fxml"));
         Parent root = loader.load();
         ModifiercircuitController controller = loader.getController();
-        controller.setAtrtribute(circuit);
+        
         controller.setListener(new ModifiercircuitController.PopupListener() {
+               @Override
+                        public void onInfoSent( Boolean Rendez_vousInstance) {
+                           tv2.getItems().clear();
+                           
+                           remplir();
+                }
+                });
+            
+             controller.setAtrtribute(circuit);
+               controller.setListener(new ModifiercircuitController.PopupListener() {
+
             @Override
             public void onInfoSent(Boolean value) {
                 // Code à exécuter après la modification de la station

@@ -109,6 +109,22 @@ public class Circuit {
         this.id_c = id_c;
     }
 
+//   public boolean isValid() {
+//        
+//        if (nom_c == null || nom_c.isEmpty()) {
+//            return false;
+//        }
+//        if (liste_c == null || liste_c.isEmpty()) {
+//            return false;
+//        }
+//        if (nbrbus_c == null || nbrbus_c.isEmpty()) {
+//            return false;
+//        }
+//        if (distance_c == null || distance_c.isEmpty()) {
+//            return false;
+//        }
+//        return true;
+//    }
     
   
    
