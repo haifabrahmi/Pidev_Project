@@ -19,8 +19,8 @@ public class Test {
     public static void main(String[] args) {
         try {
             Reservation r;
-           Reservation u;
-            Reservation s;
+           //Reservation u;
+            //Reservation s;
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;
         try {
@@ -28,13 +28,13 @@ public class Test {
         } catch (ParseException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
-            r = new Reservation(0,date,"rrrr",544,34,223,222);
-            u = new Reservation(40,date,"qsdqd",5555,34,22,222);
-           s = new Reservation(33,date,"qsdqsdqsd",666,34,22,222);
+            r = new Reservation(0,date,"rrrr","2 stations",1.0f,3,3.2f,34,222);
+            //u = new Reservation(318,date,"14:40","",2,3.2f,34,22,222);
+           //s = new Reservation(33,date,"qsdqsdqsd",666,34,22,222);
             ReservationService rs = new ReservationService();
-           rs.ajouter(r);
-            rs.modifier(u);
-            rs.supprimer(s);
+          rs.ajouter(r);
+            //rs.modifier(u);
+           // rs.supprimer(s);
            List<Reservation> res = rs.recuperer();
             System.out.println("Liste res");
             for ( Reservation ress: res){

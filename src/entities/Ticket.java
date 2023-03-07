@@ -15,18 +15,19 @@ public class Ticket {
 
   
 
-    public Ticket(int id_ticket, float prix, Date date_achat, String type_ticket) {
-        this.id_ticket = id_ticket;
-        this.prix = prix;
-        this.date_achat = date_achat;
-        this.type_ticket = type_ticket;    
-    }
+   
 
     public Ticket() {
  this.id_ticket = id_ticket;
         this.prix = prix;
-        this.date_achat = date_achat;
         this.type_ticket = type_ticket;      }
+
+    public Ticket(int id_ticket, float prix, String type_ticket) {
+        this.id_ticket = id_ticket;
+        this.prix = prix;
+        this.type_ticket = type_ticket;
+    }
+
 
     public int getId_ticket() {
         return id_ticket;
@@ -48,10 +49,7 @@ public class Ticket {
         return date_achat;
     }
 
-    public void setDate_achat(Date date_achat) {
-        this.date_achat = date_achat;
-    }
-
+  
     public String getType_ticket() {
         return type_ticket;
     }
@@ -62,7 +60,7 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" + "id_ticket=" + id_ticket + ", prix=" + prix + ", date_achat=" + date_achat + ", type_ticket=" + type_ticket + '}';
+        return "Ticket{" + "id_ticket=" + id_ticket + ", prix=" + prix + ", type_ticket=" + type_ticket + '}';
     }
     
     

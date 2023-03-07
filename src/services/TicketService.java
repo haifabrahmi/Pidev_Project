@@ -5,12 +5,12 @@
  */
 package services;
 
-import entities.Reservation;
 import entities.Ticket;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import utils.MyDB;
 
@@ -29,22 +29,20 @@ public class TicketService implements IService<Ticket> {
     
     @Override
     public void ajouter(Ticket t) throws SQLException {
- String res = "INSERT INTO Ticket (id_ticket,prix, date_achat, type_ticket) VALUES (?, ?,?,?,)";
-        PreparedStatement ps = cnx.prepareStatement(res);
-         ps.setInt(1, t.getId_ticket());
+ String res = "INSERT INTO Ticket (id_ticket, prix, type_ticket) VALUES (?, ?, ?)";
+    PreparedStatement ps = cnx.prepareStatement(res);
+    ps.setInt(1, t.getId_ticket());
     ps.setFloat(2, t.getPrix());
-    ps.setDate(3, t.getDate_achat());
-    ps.setString(4, t.getType_ticket());
+    ps.setString(3, t.getType_ticket());
     ps.executeUpdate();
     System.out.println("Ticket ajouté");
     }
 
     @Override
     public void modifier(Ticket t) throws SQLException {
- String req = "UPDATE ticket SET prix=?, date_achat=?, type_ticket=? WHERE id_ticket=?";
+ String req = "UPDATE ticket SET prix=?, type_ticket=? WHERE id_ticket=?";
         PreparedStatement ps = cnx.prepareStatement(req);
         ps.setFloat(1, t.getPrix());
-        ps.setDate(2, t.getDate_achat());
         ps.setString(3, t.getType_ticket());
         ps.setInt(4, t.getId_ticket());
         ps.executeUpdate();
@@ -61,9 +59,48 @@ public class TicketService implements IService<Ticket> {
 
     @Override
     public List<Ticket> recuperer() throws SQLException {
+
+    List<Ticket> tickets = new ArrayList<>();
+    String req = "SELECT * FROM Ticket";
+    PreparedStatement ps = cnx.prepareStatement(req);
+    ResultSet rs = ps.executeQuery();
+    while (rs.next()) {
+        Ticket ticket = new Ticket();
+        ticket.setId_ticket(rs.getInt("id_ticket"));
+        ticket.setPrix(rs.getFloat("prix"));
+        ticket.setType_ticket(rs.getString("type_ticket"));
+        tickets.add(ticket);
+    }
+    return tickets;
+}
+
+    public Ticket getTicketByType(String newValue) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    
+    
+    public double getPrixByType(String type_ticket) throws SQLException {
+    String query = "SELECT prix FROM ticket WHERE type_ticket = ?";
+    try (PreparedStatement pstmt = cnx.prepareStatement(query)) {
+        pstmt.setString(1, type_ticket);
+        ResultSet rs = pstmt.executeQuery();
+        if (rs.next()) {
+            return rs.getDouble("prix");
+        } else {
+            throw new SQLException("Ticket with type '" + type_ticket + "' not found.");
+        }
+    }
+}
+
+    
+    
+    
+    
+    
+    
+ }
+    
    
 
-}
+

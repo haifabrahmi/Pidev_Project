@@ -18,11 +18,20 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import services.ReservationService;
 import entities.Reservation;
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -32,7 +41,7 @@ import javafx.scene.control.TextField;
 public class Afficher_resController implements Initializable {
 
     @FXML
-    private TableView<Reservation> tv;
+     TableView<Reservation> tv;
     @FXML
     private TableColumn<Reservation, Integer> id_res;
     @FXML
@@ -41,6 +50,8 @@ public class Afficher_resController implements Initializable {
     private TableColumn<Reservation, String> heure_res;
     @FXML
     private TableColumn<Reservation, Integer> nb_place;
+    @FXML
+    private TableColumn<Reservation, Float> prix_totale;
     @FXML
     private TableColumn<Reservation, Integer> immat;
     @FXML
@@ -57,6 +68,9 @@ public class Afficher_resController implements Initializable {
     private Button modifier;
     @FXML
     private TextField res_input;
+    @FXML
+    private TextField recherche;
+  
    
 
     /**
@@ -64,7 +78,14 @@ public class Afficher_resController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         
+         recherche.textProperty().addListener((observable, oldValue, newValue) -> {
+    try {
+        recherche(null); // Call the recherche method with a dummy ActionEvent
+    } catch (SQLException ex) {
+        Logger.getLogger(Afficher_resController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+});
+
     // Add listener to tableview selection
     tv.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
         if (newSelection != null) {
@@ -77,11 +98,12 @@ public class Afficher_resController implements Initializable {
           List list = rs.recuperer();
            
       
-       ListRes.addAll(list);
+        ListRes.addAll(list);
         date_res.setCellValueFactory(new PropertyValueFactory<>("date_res"));
         id_res.setCellValueFactory(new PropertyValueFactory<>("id_res"));
         heure_res.setCellValueFactory(new PropertyValueFactory<>("heure_res"));
         nb_place.setCellValueFactory(new PropertyValueFactory<>("nb_place"));
+        prix_totale.setCellValueFactory(new PropertyValueFactory<>("prix_totale"));
         immat.setCellValueFactory(new PropertyValueFactory<>("imatriculation"));
         id_ticket.setCellValueFactory(new PropertyValueFactory<>("id_ticket"));
         id_usr.setCellValueFactory(new PropertyValueFactory<>("id_usr"));
@@ -115,17 +137,66 @@ private void supprimer(ActionEvent event) throws SQLException {
         alert.setContentText("Le champ doit contenir un nombre valide !");
         alert.showAndWait();
     }
+}
+    void setdatares(Reservation r) {
+     }
+     @FXML
+private void recherche(ActionEvent event) throws SQLException {
+    String idText = recherche.getText();
+    if (!idText.isEmpty()) {
+        if (idText.matches("\\d+")) {
+            int id = Integer.parseInt(idText);
+            List<Reservation> list = rs.rechercher(id);
+            ListRes.clear();
+            ListRes.addAll(list);
+            tv.refresh();
+        } else {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Erreur de saisie");
+            alert.setHeaderText(null);
+            alert.setContentText("Le champ doit contenir un nombre valide !");
+            alert.showAndWait();
+        }
+    } else {
+        // If the search field is empty, display all reservations
+        List<Reservation> list = rs.recuperer();
+        ListRes.clear();
+        ListRes.addAll(list);
+        tv.refresh();
+    }
     
-   
 }
 
 
-    @FXML
-    private void modifier(ActionEvent event) {
-        
+@FXML
+private void modifier_reservation(ActionEvent event) throws IOException {
+    Reservation selectedReservation = tv.getSelectionModel().getSelectedItem();
+    if (selectedReservation == null) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Aucune reservation selectionnée");
+        alert.setHeaderText(null);
+        alert.setContentText("Veuillez sélectionner une réservation à modifier.");
+        alert.showAndWait();
+        return;
     }
 
-     void setdatares(Reservation r) {
-     }
-    
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("modifier_res.fxml"));
+    Parent root = loader.load();
+    Modifier_resController modifierResController = loader.getController();
+    modifierResController.setReservation(selectedReservation);
+
+    Stage stage = new Stage();
+    stage.setScene(new Scene(root));
+    stage.initModality(Modality.APPLICATION_MODAL);
+    stage.showAndWait();
+}
+
+
+
+
+
     }
+
+   
+
+    

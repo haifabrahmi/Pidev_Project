@@ -7,8 +7,6 @@ package gui;
 
 import entities.Ticket;
 import java.net.URL;
-import java.sql.SQLException;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +14,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import services.TicketService;
 
 /**
@@ -37,7 +34,7 @@ public class Afficher_TicketController implements Initializable {
     
     TicketService rs = new TicketService();
                 ObservableList<Ticket>  ListRes = FXCollections.observableArrayList();
-          Ticket r = new Ticket();
+          Ticket t = new Ticket();
     @FXML
     private TableColumn<?, ?> typeticket;
 

@@ -8,21 +8,25 @@ public class Reservation {
     private Date date_res;
     private String heure_res;
     private int nb_place;
+    private String type_ticket;    
+    private float prix;
+    private float prix_totale;
     private int imatriculation;
-    private int id_ticket;
     private int id_usr;
     
     public Reservation() {
     }
 
     // Constructor
-    public Reservation(int id_res, Date date_res, String heure_res, int nb_place, int imatriculation, int id_ticket, int id_usr) {
+    public Reservation(int id_res, Date date_res, String heure_res, String Type_ticket, float prix, int nb_place, float prix_totale, int imatriculation, int id_usr) {
         this.id_res = id_res;
         this.date_res = date_res;
         this.heure_res = heure_res;
         this.nb_place = nb_place;
+        this.prix = prix;
+        this.prix_totale = prix_totale;
+        this.type_ticket = Type_ticket;
         this.imatriculation = imatriculation;
-        this.id_ticket = id_ticket;
         this.id_usr = id_usr;
     }
 
@@ -58,20 +62,36 @@ public class Reservation {
         this.nb_place = nb_place;
     }
 
+    public String getType_ticket() {
+        return type_ticket;
+    }
+
+    public void setType_ticket(String type_ticket) {
+        this.type_ticket = type_ticket;
+    }
+
+    public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
+    }
+
+    public float getPrix_totale() {
+        return prix_totale;
+    }
+
+    public void setPrix_totale(float prix_totale) {
+        this.prix_totale = prix_totale;
+    }
+
     public int getImatriculation() {
         return imatriculation;
     }
 
     public void setImatriculation(int imatriculation) {
         this.imatriculation = imatriculation;
-    }
-
-    public int getId_ticket() {
-        return id_ticket;
-    }
-
-    public void setId_ticket(int id_ticket) {
-        this.id_ticket = id_ticket;
     }
 
     public int getId_usr() {
@@ -84,8 +104,10 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Reservation{" + "id_res=" + id_res + ", date_res=" + date_res + ", heure_res=" + heure_res + ", nb_place=" + nb_place + ", imatriculation=" + imatriculation + ", id_ticket=" + id_ticket + ", id_usr=" + id_usr + '}';
+        return "Reservation{" + "id_res=" + id_res + ", date_res=" + date_res + ", heure_res=" + heure_res + ", nb_place=" + nb_place + ", type_ticket=" + type_ticket + ", prix=" + prix + ", prix_totale=" + prix_totale + ", imatriculation=" + imatriculation + ", id_usr=" + id_usr + '}';
     }
+
+    
 
     public void setImmatriculation(int parseInt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

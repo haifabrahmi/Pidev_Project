@@ -1,14 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
-import java.sql.*;
-import entities.Reservation;
+
 import java.io.IOException;
-import java.net.URL;
+import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import entities.Reservation;
+import entities.Ticket;
+import java.net.URL;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,17 +21,15 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import services.ReservationService;
+import services.TicketService;
 
-/**
- * FXML Controller class
- *
- * @author BouheniMed
- */
 public class ReservationController implements Initializable {
-    //private ObservableList<Content> obc =FXCollections.observableArrayList(Content.values());
     @FXML
     private Button ajouter_res;
     @FXML
@@ -37,25 +39,83 @@ public class ReservationController implements Initializable {
     @FXML
     private Button goback;
     @FXML
-    private TextField heureres;
-    
-            ReservationService rs = new ReservationService();
+    private ChoiceBox<String> heure_res;
+    private String[] data = {"08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00" };
 
-    /**
-     * Initializes the controller class.
-     * @param url
-     * @param rb
-     */
+    ReservationService rs = new ReservationService();
+
+    Reservation r = new Reservation();
+    @FXML
+    private ChoiceBox<String> type_ticket;
+    @FXML
+    private Label prix_ticket;
+    @FXML
+    private Label price;
+
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-       // heureres.setItems(obc);
-    }    
-  Reservation r = new Reservation();
-                
+public void initialize(URL url, ResourceBundle rb) {
+    heure_res.getItems().addAll(data);
+    heure_res.getSelectionModel().clearSelection();
+    
+    try {
+        // Create an instance of the TicketService class
+        TicketService ticketService = new TicketService();
+
+        // Get the list of tickets from the database
+        List<Ticket> tickets = ticketService.recuperer();
+
+        // Create an ObservableList of type String to hold the type_ticket values
+        ObservableList<String> typeTickets = FXCollections.observableArrayList();
+
+        // Loop through the tickets list and add the type_ticket values to the typeTickets list
+        tickets.stream().forEach((ticket) -> {
+            typeTickets.add(ticket.getType_ticket());
+        });
+
+        // Set the type_ticket values in the type_ticketChoiceBox
+        type_ticket.setItems(typeTickets);
+
+        // Set a listener to update the price label when a new ticket type is selected
+        type_ticket.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                try {
+                    // Get the price of the selected ticket type
+                    float prix = (float) ticketService.getPrixByType(newValue);
+
+
+                    // Set the price in the price label
+                    prix_ticket.setText(String.format("%.1f", prix));
+
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        });
+
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+
+    // Set the minimum date to the current date
+    dateres.setValue(LocalDate.now());
+
+    // Set the maximum date to one year from the current date
+    LocalDate maxDate = LocalDate.now().plus(1, ChronoUnit.YEARS);
+    dateres.setDayCellFactory(d -> new DateCell() {
+        @Override
+        public void updateItem(LocalDate item, boolean empty) {
+            super.updateItem(item, empty);
+            if (item.isBefore(dateres.getValue()) || item.isAfter(maxDate)) {
+                setDisable(true);
+            }
+        }
+    });
+}
+
    @FXML
 private void ajouterReservation(ActionEvent event) throws SQLException {
     // Vérifier si tous les champs sont remplis
-    if(dateres.getValue() == null || nb_place.getText().isEmpty() || heureres.getText().isEmpty()) {
+    if (dateres.getValue() == null || nb_place.getText().isEmpty() || heure_res.getValue() == null || type_ticket.getValue() == null || prix_ticket.getText() == null   ) {
         // Afficher un message d'erreur si l'un des champs est vide
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Erreur de saisie");
@@ -80,21 +140,27 @@ private void ajouterReservation(ActionEvent event) throws SQLException {
 
     // Si toutes les saisies sont valides, ajouter la réservation
     r.setImatriculation(34);
-    r.setId_ticket(223);
     r.setId_usr(222);
+    r.setPrix(Float.parseFloat(prix_ticket.getText())); // get the price value from the label
+
+    r.setNb_place (Integer.parseInt(nb_place.getText()));
     r.setDate_res(Date.valueOf(dateres.getValue()));
-    r.setNb_place(Integer.parseInt(nb_place.getText()));
-    r.setHeure_res(heureres.getText());
+    r.setHeure_res(heure_res.getValue());
+    r.setType_ticket(type_ticket.getValue());
 
     rs.ajouter(r);
+    int nb_place = r.getNb_place();
+    double prix = r.getPrix();
+    double total_price = nb_place * prix;
+    price.setText(String.valueOf(total_price));
 }
+
 
     
 
     @FXML
     private void retour(ActionEvent event) throws IOException {
         r.setImatriculation(34);
-                r.setId_ticket(223);
                 r.setId_usr(222);
           FXMLLoader loader = new FXMLLoader(getClass().getResource("Ticket.fxml"));
             Parent root = loader.load();
