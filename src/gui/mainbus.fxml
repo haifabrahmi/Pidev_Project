@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="682.0" prefWidth="922.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainbusController">
+   <children>
+      <VBox layoutY="-1.0" prefHeight="682.0" prefWidth="298.0" style="-fx-background-color: #FFCA36;">
+         <children>
+            <Pane prefHeight="149.0" prefWidth="298.0">
+               <children>
+                  <ImageView fitHeight="134.0" fitWidth="306.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="busbt" layoutX="24.0" layoutY="173.0" mnemonicParsing="false" onAction="#go_to_bus" prefHeight="66.0" prefWidth="246.0" style="-fx-background-color: #5b5a56;" text="Bus" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <ImageView fitHeight="485.0" fitWidth="581.0" layoutX="358.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Capture_d_écran_2023-02-27_112326-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="maintbt" layoutX="23.0" layoutY="291.0" mnemonicParsing="false" onAction="#go_to_maint" prefHeight="62.0" prefWidth="246.0" style="-fx-background-color: #5b5a56;" text="Maintenance" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifiermaintController">
+   <content>
+      <AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="779.0">
+         <children>
+            <VBox prefHeight="590.0" prefWidth="330.0" style="-fx-background-color: #FFCA36;" />
+            <ImageView fitHeight="254.0" fitWidth="262.0" layoutX="31.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Capture_d_écran_2023-02-21_125542-removebg-preview_1.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="371.0" layoutY="37.0" text="Modifier Maintenance" textFill="#ffca36">
+               <font>
+                  <Font name="Felix Titling" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="sai_description" layoutX="423.0" layoutY="200.0" prefHeight="70.0" prefWidth="198.0" promptText="description" />
+            <DatePicker fx:id="sai_dateentretien" layoutX="423.0" layoutY="297.0" prefHeight="26.0" prefWidth="198.0" promptText="date_entretien" />
+            <Button fx:id="enregistrer" layoutX="567.0" layoutY="511.0" mnemonicParsing="false" onAction="#enreg" prefHeight="36.0" prefWidth="103.0" style="-fx-background-color: #5b5a56;" text="Enregistrer" textFill="WHITE" />
+            <ComboBox fx:id="numPlaqueCombo" layoutX="423.0" layoutY="357.0" prefHeight="26.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+   </content>
+</DialogPane>

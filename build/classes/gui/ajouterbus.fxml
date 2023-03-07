@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="625.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterbusController">
+   <children>
+      <VBox layoutY="-2.0" prefHeight="626.0" prefWidth="282.0" style="-fx-background-color: #FFCA36;" />
+      <ImageView fitHeight="240.0" fitWidth="264.0" layoutX="8.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Capture_d_écran_2023-02-21_125542-removebg-preview_1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="342.0" layoutY="28.0" prefHeight="54.0" prefWidth="350.0" text="Ajouter Bus" textFill="#ffca36">
+         <font>
+            <Font name="Felix Titling" size="44.0" />
+         </font>
+      </Label>
+      <TextField fx:id="sai_modele" layoutX="305.0" layoutY="126.0" prefHeight="30.0" prefWidth="219.0" promptText="modele" />
+      <TextField fx:id="sai_numero_plaque" layoutX="305.0" layoutY="186.0" prefHeight="26.0" prefWidth="219.0" promptText="numero_de_plaque" />
+      <TextField fx:id="sai_capacite" layoutX="305.0" layoutY="246.0" prefHeight="26.0" prefWidth="219.0" promptText="capacite" />
+      <TextField fx:id="sai_destin" layoutX="305.0" layoutY="311.0" prefHeight="26.0" prefWidth="219.0" promptText="destination" />
+      <DatePicker fx:id="sai_datedep" layoutX="296.0" layoutY="390.0" prefHeight="30.0" prefWidth="184.0" promptText="date_depart" />
+      <DatePicker fx:id="sai_datearriv" layoutX="530.0" layoutY="390.0" prefHeight="30.0" prefWidth="184.0" promptText="date_arrive" />
+      <Button fx:id="ajouter_bus" layoutX="580.0" layoutY="526.0" mnemonicParsing="false" onAction="#ajouterbus" prefHeight="54.0" prefWidth="154.0" style="-fx-background-color: #5b5a56;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="Retour" layoutX="46.0" layoutY="529.0" mnemonicParsing="false" onAction="#Retourbus" prefHeight="54.0" prefWidth="161.0" style="-fx-background-color: #5b5a56;" text="Retour" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="afficher_bus" layoutX="374.0" layoutY="527.0" mnemonicParsing="false" onAction="#afficherbus" prefHeight="54.0" prefWidth="154.0" style="-fx-background-color: #5b5a56;" text="Afficher" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="pdf" layoutX="631.0" layoutY="467.0" mnemonicParsing="false" onAction="#pdf_button" text="Telecharger pdf" />
+      <Button fx:id="txtphoto" layoutX="507.0" layoutY="467.0" mnemonicParsing="false" onAction="#uploadimage" prefHeight="26.0" prefWidth="99.0" text="Image" />
+      <ImageView fx:id="imageView" fitHeight="205.0" fitWidth="200.0" layoutX="544.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="sai_image" layoutX="296.0" layoutY="467.0" prefHeight="26.0" prefWidth="184.0" promptText="textimage" />
+   </children>
+</AnchorPane>
