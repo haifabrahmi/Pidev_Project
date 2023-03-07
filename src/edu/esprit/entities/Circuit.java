@@ -6,6 +6,14 @@
 package edu.esprit.entities;
 
 import java.util.Date;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+import static java.sql.JDBCType.DATE;
+import static java.sql.Types.DATE;
+import java.time.Instant;
+import static java.util.Calendar.DATE;
+
+import javafx.scene.shape.Rectangle;
 
 /**
  *
@@ -43,6 +51,9 @@ public class Circuit {
     public Circuit(String string) {
     }
 
+    
+
+   
     @Override
     public String toString() {
         return "Circuit{" + "id_c=" + id_c + ", nom_c=" + nom_c + ", liste_c=" + liste_c + ", nbrbus_c=" + nbrbus_c + ", horaire_c=" + horaire_c + ", distance_c=" + distance_c + '}';
@@ -92,6 +103,10 @@ public class Circuit {
 
     public void setDistance_c(String distance_c) {
         this.distance_c = distance_c;
+    }
+
+    public void setId_c(int id_c) {
+        this.id_c = id_c;
     }
 
     

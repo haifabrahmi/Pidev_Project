@@ -23,10 +23,14 @@ import java.util.List;
  */
 public class ServiceCircuit implements IService<Circuit> {
 
-    Connection cnx = DataSource.getInstance().getCnx();
 
-    {
+    
+     Connection cnx ;
+
+    public ServiceCircuit() {
+        cnx= DataSource.getInstance().getCnx();
     }
+    
 
     @Override
     public void ajouter(Circuit t) {
@@ -74,17 +78,35 @@ public class ServiceCircuit implements IService<Circuit> {
     public List<Circuit> getAll() {
         List<Circuit> list = new ArrayList<>();
         try {
-            String req = "SELECT *  FROM Station s JOIN Circuit ON s.id_c = Circuit.id_c";
+            String req = "Select * FROM Circuit";
+            //String req = "SELECT *  FROM Station s JOIN Circuit ON s.id_c = Circuit.id_c";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                Circuit t = new Circuit(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getDate(5), rs.getString(6));
+              //  Circuit t = new Circuit(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getDate(5), rs.getString(6));
+                
+                 while (rs.next()) {
+                Circuit t = new Circuit();
+                t.setNom_c(rs.getString("nom_c"));
+                t.setListe_c(rs.getInt("liste_c"));
+                t.setNbrbus_c(rs.getInt("nbrbus_c"));
+                t.setHoraire_c(rs.getDate("horaire_c"));
+                t.setDistance_c(rs.getString("distance_c"));
+               
                 list.add(t);
+            }
+                
+                
+             
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         return list;
+    }
+
+    public void update(Circuit c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

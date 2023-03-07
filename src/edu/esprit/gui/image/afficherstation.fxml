@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.image.AfficherstationController">
+   <children>
+      <TableView fx:id="tv" layoutX="42.0" layoutY="63.0" prefHeight="200.0" prefWidth="548.0">
+        <columns>
+          <TableColumn fx:id="nom_s" prefWidth="75.0" text="nom_s" />
+          <TableColumn fx:id="adresse_s" prefWidth="75.0" text="adresse_s" />
+            <TableColumn fx:id="ligne_s" prefWidth="75.0" text="ligne_s" />
+            <TableColumn fx:id="horaire_s" prefWidth="75.0" text="horaire_s" />
+            <TableColumn fx:id="equipement_s" prefWidth="113.0" text="equipement_s" />
+            <TableColumn fx:id="commentaire_s" prefWidth="100.0" text="commentaire_s" />
+        </columns>
+      </TableView>
+      <Button fx:id="supprimer" layoutX="54.0" layoutY="310.0" mnemonicParsing="false" onAction="#supprimer" text="supprimer" />
+      <Button fx:id="modifier" layoutX="327.0" layoutY="310.0" mnemonicParsing="false" onAction="#modifier" text="modifier" />
+   </children>
+</AnchorPane>

@@ -23,27 +23,38 @@ import java.util.List;
  */
 public class Service implements IService<Station> {
 
-    Connection cnx = DataSource.getInstance().getCnx();
+    Connection cnx ;
+
+    public Service() {
+        cnx= DataSource.getInstance().getCnx();
+    }
+    
 
     @Override
     public void ajouter(Station t) {
-        try {
-            String req = "INSERT INTO `station`(`id_s` ,`nom_s`  , `adresse_s` , `ligne_s` , `horaire_s` , `equipement_s` , `commentaire_s`) VALUES (?,?,?,?,?,?,?)";
-            PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setInt(1, t.getId_s());
-            ps.setString(2, t.getNom_s());
-            ps.setString(3, t.getAdresse_s());
-            ps.setString(4, t.getLigne_s());
-            ps.setDate(5, (Date) t.getHoraire_s());
-            ps.setString(6, t.getEquipement_s());
-            ps.setString(7, t.getCommentaire_s());
+//       
 
+        try {
+            String req = "INSERT INTO station( `nom_s`  , `adresse_s` , `ligne_s` , `horaire_s` , `equipement_s` , `commentaire_s`) VALUES (?,?,?,?,?,?)";
+            PreparedStatement ps = cnx.prepareStatement(req);
+           
+            ps.setString(1, t.getNom_s());
+            ps.setString(2, t.getAdresse_s());
+            ps.setString(3, t.getLigne_s());
+            ps.setDate(4, (Date) t.getHoraire_s());
+            ps.setString(5, t.getEquipement_s());
+            ps.setString(6, t.getCommentaire_s());
+            //ps.setInt(7, t.getCircuit().getId_c());
+            //ps.setInt(7,23);
             ps.executeUpdate();
             System.out.println("station added ");
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
+  
+    
     }
+    
 
     @Override
     public void supprimer(int id) {
@@ -75,7 +86,9 @@ String req = "UPDATE station SET id_s = '" + t.getId_s() + "', nom_s = '" + t.ge
     public List<Station> getAll() {
         List<Station> list = new ArrayList<>();
         try {
-            String req = "Select c.nom_c , s.nom_s, s.adresse_s , s.ligne_s , s.horaire_s , s.equipement_s , s.commentaire_s  from circuit c "+"JOIN station s ON c.id_c = s.id_C";
+            String req = "Select * from Station";
+//            String req = "Select   s.nom_s, s.adresse_s , s.ligne_s , s.horaire_s , s.equipement_s , s.commentaire_s ";
+//             from circuit c "+"JOIN station s ON c.id_c = s.id_C"
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             
@@ -87,8 +100,8 @@ String req = "UPDATE station SET id_s = '" + t.getId_s() + "', nom_s = '" + t.ge
                 t.setHoraire_s(rs.getDate("horaire_s"));
                 t.setEquipement_s(rs.getString("equipement_s"));
                 t.setCommentaire_s(rs.getString("commentaire_s"));
-                Circuit c = new Circuit(rs.getString("nom_c"));
-                t.setCircuit(c);
+                //Circuit c = new Circuit(rs.getString("nom_c"));
+                ///t.setCircuit(c);
                 list.add(t);
             }
         } catch (SQLException ex) {
@@ -96,6 +109,10 @@ String req = "UPDATE station SET id_s = '" + t.getId_s() + "', nom_s = '" + t.ge
         }
 
         return list;
+    }
+
+    public void supprimerStation(Station station) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

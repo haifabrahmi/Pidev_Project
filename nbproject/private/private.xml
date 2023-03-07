@@ -3,17 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/entities/Station.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/main/main.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/gui/AjouterstationController.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/main/main1.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/gui/image/AjoutercircuitController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/main/ajouterstationmain.java</file>
             <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/services/ServiceCircuit.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/gui/ajouterstation.fxml</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/services/IService.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/services/Service.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/entities/Circuit.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/services/IServiceCircuit.java</file>
-            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/utils/DataSource.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/main/affichercircuitmain.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/main/station.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/tunibus/src/edu/esprit/gui/image/MainStationController.java</file>
         </group>
     </open-files>
 </project-private>

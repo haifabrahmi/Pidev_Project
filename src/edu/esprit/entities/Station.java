@@ -10,6 +10,7 @@ import static java.sql.Types.DATE;
 import java.time.Instant;
 import static java.util.Calendar.DATE;
 import java.util.Date;
+import javafx.scene.shape.Rectangle;
 
 /**
  *
@@ -51,8 +52,11 @@ public class Station {
 
     @Override
     public String toString() {
-        return "Station{" + "id_s=" + id_s + ", nom_s=" + nom_s + ", adresse_s=" + adresse_s + ", ligne_s=" + ligne_s + ", horaire_s=" + horaire_s + ", equipement_s=" + equipement_s + ", commentaire_s=" + commentaire_s + '}';
+        return "Station{" + "id_s=" + id_s + ", nom_s=" + nom_s + ", adresse_s=" + adresse_s + ", ligne_s=" + ligne_s + ", horaire_s=" + horaire_s + ", equipement_s=" + equipement_s + ", commentaire_s=" + commentaire_s + ", circuit=" + circuit + '}';
     }
+
+   
+    
 
     public Station(String nom_s, String adresse_s, String ligne_s, Date horaire_s, String equipement_s, String commentaire_s, Circuit circuit) {
         this.nom_s = nom_s;
@@ -141,8 +145,15 @@ public class Station {
         return true;
     }
 
-    public boolean isValidd() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setId_s(int id_s) {
+        this.id_s = id_s;
     }
+    public int getid_c(int id_c){
+        return this.circuit.getId_c();
+    }
+    
+   public void setid_c(int id_c){
+   this.circuit.setId_c(id_c);
+   }
 
 }

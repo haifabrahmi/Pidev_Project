@@ -7,7 +7,6 @@ package edu.esprit.main;
 
 import java.io.IOException;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -21,25 +20,22 @@ import javafx.stage.Stage;
  *
  * @author HP
  */
-public class main1 extends Application {
+public class affichercircuitmain extends Application {
     
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Ajouterstation.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("ajouter station");
-            primaryStage.show();
+            Parent root = FXMLLoader.load(getClass().getResource("affichercircuit.fxml"));
             
-
+            Scene scene = new Scene(root);
+            
+            primaryStage.setTitle("afficher circuit");
+            primaryStage.setScene(scene);
+            primaryStage.show();
         } catch (IOException ex) {
-            System.out.println("error" + ex.getMessage());
+            System.out.println(ex.getMessage());
         }
     }
-
-  
 
     /**
      * @param args the command line arguments

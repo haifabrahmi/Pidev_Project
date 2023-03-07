@@ -27,24 +27,7 @@ public class DataSource {
         try {
             cnx = DriverManager.getConnection(URL, USER, PWD);
             System.out.println("Connected !");
-           /* // préparation de la requête SQL
-            String sql = "SELECT *  FROM Station s JOIN Circuit ON s.id_c = Circuit.id_c";
-            Preparedstatement stmt = cnx.prepareStatement(sql);
-            
-            // exécution de la requête
-            ResultSet rs = stmt.executeQuery();
-            
-            // traitement des résultats
-            while (rs.next()) {
-                String nomStation = rs.getString("nom_station");
-                String nomCircuit = rs.getString("nom_circuit");
-                System.out.println(nomStation + " - " + nomCircuit);
-            }
-            
-            // fermeture des ressources
-            rs.close();
-            stmt.close();
-            cnx.close();/*/
+          
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
