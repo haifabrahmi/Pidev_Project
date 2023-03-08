@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="controllers.ReponseReclamationController">
+    <stylesheets>
+        <URL value="@/style/reponsereclamation.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="134.0" layoutY="108.0" text="Saisissez votre réponse" />
+      <Button fx:id="envoyerReponse" layoutX="472.0" layoutY="312.0" mnemonicParsing="false" text="Envoyer" />
+      <TextArea fx:id="textReponse" layoutX="115.0" layoutY="138.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="272.0" layoutY="34.0" text="ESPACE RECLAMATION" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="655.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RechercheReclamationController">
+    <stylesheets>
+        <URL value="@/style/recherchereclamation.css" />
+    </stylesheets>
+   <children>
+      <ComboBox fx:id="comborech" layoutX="359.0" layoutY="57.0" prefWidth="150.0" />
+      <Label layoutX="99.0" layoutY="61.0" prefHeight="22.0" prefWidth="223.0" text="Que voulez vous chercher ?">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tablerech" layoutX="68.0" layoutY="179.0" prefHeight="239.0" prefWidth="518.0">
+        <columns>
+          <TableColumn fx:id="recrech" prefWidth="106.4000244140625" text="Id reclamation" />
+          <TableColumn fx:id="userrech" prefWidth="44.0" text="Id_user" />
+            <TableColumn fx:id="catrech" prefWidth="75.0" text="Categorie" />
+            <TableColumn fx:id="objrech" prefWidth="75.0" text="Objet" />
+            <TableColumn fx:id="descrech" prefWidth="162.4000244140625" text="Description" />
+            <TableColumn fx:id="etrech" prefWidth="52.0" text="Etat" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
