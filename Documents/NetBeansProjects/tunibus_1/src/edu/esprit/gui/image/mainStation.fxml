@@ -9,8 +9,8 @@
 <AnchorPane id="AnchorPane" prefHeight="582.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.image.MainStationController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffca32" height="582.0" stroke="BLACK" strokeType="INSIDE" width="295.0" />
-      <Button fx:id="btStation" layoutX="80.0" layoutY="184.0" mnemonicParsing="false" onAction="#btStation" prefHeight="41.0" prefWidth="118.0" text="Station" />
-      <Button fx:id="btCircuit" layoutX="80.0" layoutY="348.0" mnemonicParsing="false" onAction="#btCircuit" prefHeight="41.0" prefWidth="118.0" text="Circuit" />
+      <Button fx:id="btStation" layoutX="80.0" layoutY="184.0" mnemonicParsing="false" onAction="#btStation" prefHeight="41.0" prefWidth="118.0" style="-fx-background-color: #1032c9;" text="Station" textFill="#f2eeee" />
+      <Button fx:id="btCircuit" layoutX="80.0" layoutY="348.0" mnemonicParsing="false" onAction="#btCircuit" prefHeight="41.0" prefWidth="118.0" style="-fx-background-color: #1032c9;" text="Circuit" textFill="#f2f2f2" />
       <ImageView fitHeight="193.0" fitWidth="220.0" layoutX="424.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@331953990_599865494856660_5546845949287096441_n-removebg-preview.png" />

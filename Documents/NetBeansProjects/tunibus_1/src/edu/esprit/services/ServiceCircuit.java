@@ -8,6 +8,10 @@ package edu.esprit.services;
 import edu.esprit.entities.Circuit;
 
 import edu.esprit.utils.DataSource;
+import java.awt.AWTException;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -16,6 +20,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -55,6 +61,19 @@ public class ServiceCircuit implements IService<Circuit> {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
+            // Afficher une notification système pour l'administrateur
+            SystemTray tray = SystemTray.getSystemTray();
+            java.awt.Image image = Toolkit.getDefaultToolkit().createImage("icon.png"); // chemin vers une icône pour la notification
+            TrayIcon trayIcon = new TrayIcon(image, "Nouvelle réclamation");
+            trayIcon.setImageAutoSize(true);
+            trayIcon.setToolTip("Nouvelle Cicrcuit Ajouter");
+         try {
+             tray.add(trayIcon);
+         } catch (AWTException ex) {
+             Logger.getLogger(ServiceCircuit.class.getName()).log(Level.SEVERE, null, ex);
+         }
+            trayIcon.displayMessage("Nouvelle circuit ajoutée", "Une nouvelle circuit a été ajoutée pour vous , veillez consulter ceci.", TrayIcon.MessageType.INFO);
+
     }
 
   

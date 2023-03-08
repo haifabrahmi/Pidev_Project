@@ -24,7 +24,7 @@ public class main {
 
         DataSource.getInstance();
        Circuit c1 = new Circuit(23,"hrhrhr",2,13,Date.valueOf("2015-05-02"),"mm");
-      Station s11 = new Station(785, "hhhhhhh", "jjjjjj", "eeee", Date.valueOf("2017-08-09"), "yyyy", "ooooo");
+//      Station s11 = new Station(785, "hhhhhhh", "jjjjjj", "eeee", Date.valueOf("2017-08-09"), "yyyy", "ooooo");
       Station s2 = new Station(666, "llllll", "mmmmmmmmm", "eeee", Date.valueOf("2017-08-09"), "yyyy", "ooooo");
      // Station s1 = new Station( "aziz", "kadeshi", "eeee", Date.valueOf("2017-08-09"), "yy", "ooooo");
       //Station s13 = new Station("aziz", "kadeshi", "eeee", Date.valueOf("2017-08-09"), "yy","ye rabyyyyy", c1);
@@ -32,7 +32,7 @@ public class main {
      
       Service st = new Service();
       //st.ajouter(s13); 
-//            st.ajouter(s1); 
+//            st.ajouter(s11); 
 
       //st.supprimer(10);
       st.supprimer(8011);
@@ -66,12 +66,11 @@ public class main {
 ////        
       // Circuit c1 = new Circuit(23,"hrhrhr",2,13,Date.valueOf("2015-05-02"),"mm");
        
-       Circuit c2 = new Circuit(3,"hrhhhduhsrhr",2,13,Date.valueOf("2015-05-02"),"mnm");
+       Circuit c10 = new Circuit(6,"hhhhhhhhhhh",2,13,Date.valueOf("2015-05-02"),"mnm");
        
      
         ServiceCircuit sc = new ServiceCircuit();
-       //sc.ajouter(c3);
-        sc.ajouter(c2);
+       sc.ajouter(c10);
         sc.supprimer(3);
     
             

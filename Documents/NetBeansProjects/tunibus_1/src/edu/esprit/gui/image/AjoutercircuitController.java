@@ -8,6 +8,11 @@ package edu.esprit.gui.image;
 import edu.esprit.entities.Circuit;
 import edu.esprit.entities.Station;
 import edu.esprit.services.ServiceCircuit;
+import java.awt.AWTException;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
+import java.awt.TrayIcon.MessageType;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -23,6 +28,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 
 /**
  * FXML Controller class
@@ -64,7 +70,7 @@ public class AjoutercircuitController implements Initializable {
     
 
   @FXML
-private void ajoute(ActionEvent event) {
+private void ajoute(ActionEvent event) throws AWTException {
     String nom_c = nom_c1.getText();
     int liste_c = 0;
     int nbrbus_c = 0;
@@ -92,13 +98,7 @@ private void ajoute(ActionEvent event) {
         return;
     }
 
-    // Validation de format de distance
-    Pattern pattern = Pattern.compile("^\\d+(\\.\\d+)?\\s+\\w+$");
-    if (!pattern.matcher(distance_c).matches()) {
-        Alert validationAlert = new Alert(Alert.AlertType.ERROR, "Le format de la distance doit être : 12.34 km", ButtonType.OK);
-        validationAlert.showAndWait();
-        return;
-    }
+
 
    
 

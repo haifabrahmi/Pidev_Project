@@ -13,6 +13,10 @@ import com.twilio.Twilio;
 import edu.esprit.entities.Circuit;
 import edu.esprit.entities.Station;
 import edu.esprit.utils.DataSource;
+import java.awt.AWTException;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -21,6 +25,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
  
 /**
  *
@@ -53,6 +59,19 @@ public class Service implements IService<Station> {
             //ps.setInt(7,23);
             ps.executeUpdate();
             System.out.println("station added ");
+              SystemTray tray = SystemTray.getSystemTray();
+            java.awt.Image image = Toolkit.getDefaultToolkit().createImage("icon.png"); // chemin vers une icône pour la notification
+            TrayIcon trayIcon = new TrayIcon(image, "Nouvelle station");
+            trayIcon.setImageAutoSize(true);
+            trayIcon.setToolTip("Nouvelle station Ajouter");
+        try {
+            tray.add(trayIcon);
+        } catch (AWTException ex) {
+            Logger.getLogger(Service.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            trayIcon.displayMessage("Nouvelle station ajoutée", "Une nouvelle station a été ajoutée pour vous , veillez consulter ceci.", TrayIcon.MessageType.INFO);
+
+  
                 // Send SMS to user
         String accountSid = "AC6fc38d4e14a29ab0cdd952421202a88a";
         String authToken = "f35b87a43d0906fb7b4c20e4b1cfbb6f";
@@ -66,7 +85,8 @@ public class Service implements IService<Station> {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-  
+            // Afficher une notification système pour l'administrateur
+          
     
     }
     
