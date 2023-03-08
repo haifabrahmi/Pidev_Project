@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="512.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TicketController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb923" height="310.0" layoutY="289.0" stroke="TRANSPARENT" strokeType="INSIDE" width="876.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="378.0" layoutX="210.0" layoutY="135.0" stroke="#ffb624" strokeType="OUTSIDE" strokeWidth="3.0" width="438.0" />
+      <Label layoutX="325.0" layoutY="292.0" text="Nombre Places">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="325.0" layoutY="251.0" text="Heure Reservation">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="326.0" layoutY="207.0" text="Date Reservation">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="heurer" layoutX="466.0" layoutY="251.0" text="..................." />
+      <Label fx:id="dater" layoutX="468.0" layoutY="207.0" text="..................." />
+      <Label fx:id="nbp" layoutX="467.0" layoutY="292.0" text="..................." />
+      <Button layoutX="340.0" layoutY="444.0" mnemonicParsing="false" onAction="#imprimer" prefHeight="26.0" prefWidth="195.0" text="Imprimer" />
+      <ImageView fx:id="retour" fitHeight="44.0" fitWidth="32.0" layoutX="38.0" layoutY="37.0" onMouseClicked="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@goback.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="299.0" layoutY="30.0" text="Votre Ticket" textFill="#ffb923">
+         <font>
+            <Font name="Verdana Bold" size="36.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb923" height="46.0" layoutX="321.0" layoutY="383.0" stroke="TRANSPARENT" strokeType="INSIDE" width="228.0" />
+      <Label layoutX="371.0" layoutY="385.0" text="Prix" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="326.0" layoutY="332.0" text="type de ticket">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="typeticket" layoutX="465.0" layoutY="332.0" text="..................." />
+      <Label fx:id="price" layoutX="447.0" layoutY="387.0" text="..." textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font></Label>
+      <Label fx:id="prixticket" layoutX="550.0" layoutY="350.0" text="..................." textFill="#0000002f" />
+      <Label layoutX="500.0" layoutY="399.0" text="DT" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

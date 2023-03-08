@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="514.0" prefWidth="385.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="gui.Modifier_resController">
+   <children>
+      <Label layoutX="54.0" layoutY="42.0" text="Modifier Reservation" textFill="#ffb923">
+         <font>
+            <Font name="Consolas Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="145.0" prefHeight="18.0" prefWidth="104.0" text="Date de res" />
+      <Label layoutX="57.0" layoutY="323.0" prefHeight="18.0" prefWidth="104.0" text="Nbre De Places" />
+      <TextField fx:id="nb_place" layoutX="175.0" layoutY="312.0" />
+      <Label layoutX="58.0" layoutY="201.0" prefHeight="18.0" prefWidth="104.0" text="heure" />
+      <DatePicker fx:id="dateres" layoutX="175.0" layoutY="141.0" prefHeight="26.0" prefWidth="151.0" promptText="date" />
+      <ChoiceBox fx:id="heure_res" layoutX="176.0" layoutY="198.0" prefHeight="28.0" prefWidth="151.0" />
+      <Label layoutX="57.0" layoutY="263.0" prefHeight="18.0" prefWidth="104.0" text="Nombre Stations" />
+      <ChoiceBox fx:id="type_ticket" layoutX="176.0" layoutY="259.0" prefHeight="28.0" prefWidth="151.0" />
+      <Label layoutX="97.0" layoutY="375.0" prefHeight="35.0" prefWidth="158.0" text="Prix totale :">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="price" layoutX="248.0" layoutY="375.0" prefHeight="28.0" prefWidth="104.0" text="..">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="modifier" layoutX="48.0" layoutY="431.0" mnemonicParsing="false" onAction="#modifier" prefHeight="30.0" prefWidth="289.0" text="Modifier" />
+   </children>
+</AnchorPane>

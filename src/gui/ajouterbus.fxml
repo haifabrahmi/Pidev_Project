@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="709.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterbusController">
+   <children>
+      <ImageView fitHeight="758.0" fitWidth="1126.0" layoutX="-359.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pexels-kaique-rocha-68427.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="234.0" layoutY="28.0" prefHeight="54.0" prefWidth="350.0" text="Ajouter Bus" textFill="#ffca36">
+         <font>
+            <Font name="Felix Titling" size="44.0" />
+         </font>
+      </Label>
+      <TextField fx:id="sai_modele" layoutX="66.0" layoutY="128.0" prefHeight="30.0" prefWidth="215.0" promptText="modele" />
+      <TextField fx:id="sai_numero_plaque" layoutX="70.0" layoutY="204.0" prefHeight="30.0" prefWidth="208.0" promptText="numero_de_plaque" />
+      <TextField fx:id="sai_capacite" layoutX="343.0" layoutY="126.0" prefHeight="30.0" prefWidth="208.0" promptText="capacite" />
+      <TextField fx:id="sai_destin" layoutX="347.0" layoutY="205.0" prefHeight="30.0" prefWidth="208.0" promptText="destination" />
+      <DatePicker fx:id="sai_datedep" layoutX="69.0" layoutY="280.0" prefHeight="30.0" prefWidth="208.0" promptText="date_depart" />
+      <DatePicker fx:id="sai_datearriv" layoutX="347.0" layoutY="279.0" prefHeight="30.0" prefWidth="208.0" promptText="date_arrive" />
+      <Button fx:id="ajouter_bus" layoutX="580.0" layoutY="526.0" mnemonicParsing="false" onAction="#ajouterbus" opacity="0.51" prefHeight="54.0" prefWidth="154.0" style="-fx-background-color: #ffffff; -fx-border-color: #ffca36; -fx-border-width: 3;" text="Ajouter" textFill="#ffca36">
+         <font>
+            <Font name="Felix Titling" size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="Retour" layoutX="46.0" layoutY="529.0" mnemonicParsing="false" onAction="#Retourbus" opacity="0.68" prefHeight="54.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #ffca36; -fx-border-width: 3;" text="Retour" textFill="#ffca36">
+         <font>
+            <Font name="Felix Titling" size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="afficher_bus" layoutX="374.0" layoutY="527.0" mnemonicParsing="false" onAction="#afficherbus" opacity="0.74" prefHeight="54.0" prefWidth="154.0" style="-fx-background-color: #ffffff; -fx-border-color: #ffca36; -fx-border-width: 3;" text="Afficher" textFill="#ffca36">
+         <font>
+            <Font name="Felix Titling" size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="pdf" layoutX="412.0" layoutY="357.0" mnemonicParsing="false" onAction="#pdf_button" text="Telecharger pdf" />
+      <Button fx:id="txtphoto" layoutX="288.0" layoutY="357.0" mnemonicParsing="false" onAction="#uploadimage" prefHeight="26.0" prefWidth="99.0" text="Image" />
+      <ImageView fx:id="imageView" fitHeight="205.0" fitWidth="200.0" layoutX="544.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="sai_image" layoutX="47.0" layoutY="357.0" prefHeight="26.0" prefWidth="184.0" promptText="textimage" />
+      <Label layoutX="66.0" layoutY="92.0" prefHeight="20.0" prefWidth="162.0" text="Modele de bus :" textFill="#131313">
+         <font>
+            <Font name="Felix Titling" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="355.0" layoutY="92.0" text="Capacité De bus :" textFill="#1e1d1c">
+         <font>
+            <Font name="Felix Titling" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="170.0" text="Numero De plaque">
+         <font>
+            <Font name="Felix Titling" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="364.0" layoutY="170.0" text="Destination">
+         <font>
+            <Font name="Felix Titling" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="252.0" text="Date De depart">
+         <font>
+            <Font name="Felix Titling" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="367.0" layoutY="253.0" text="Date D'arrivée">
+         <font>
+            <Font name="Felix Titling" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="334.0" prefHeight="20.0" prefWidth="138.0" text="Upload Image" textFill="#ffca36">
+         <font>
+            <Font name="Felix Titling" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

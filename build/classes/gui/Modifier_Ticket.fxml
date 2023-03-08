@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="334.0" prefWidth="316.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Modifier_TicketController">
+    <children>
+        <Label layoutX="84.0" layoutY="14.0" text="Modifier Ticket">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+        <Label layoutX="29.0" layoutY="146.0" text="Prix" />
+        <TextField fx:id="prix" layoutX="122.0" layoutY="141.0" />
+        <Button id="modifier" layoutX="120" layoutY="200" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
+    </children>
+</AnchorPane>

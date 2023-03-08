@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.image.StatisticsController">
+   <children>
+      <ImageView fx:id="GoBackBtn" fitHeight="63.0" fitWidth="81.0" layoutX="495.0" layoutY="316.0" onMouseClicked="#GoBk" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@go.png" />
+         </image>
+      </ImageView>
+      <PieChart fx:id="StatsChart" layoutX="50.0" layoutY="54.0" prefHeight="269.0" prefWidth="402.0" />
+   </children>
+</AnchorPane>
